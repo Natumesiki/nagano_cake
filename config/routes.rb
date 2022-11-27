@@ -14,5 +14,6 @@ devise_for :admin, skip: [:registrations, :passwords],controllers: {
 }
  resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
  resources :admin, only: [:genre_add,:genre_edit,:member_show,:member_edit,:order_log_list,:personal_oder_list,:personal_show]
+ 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
