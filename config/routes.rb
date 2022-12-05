@@ -12,8 +12,18 @@ Rails.application.routes.draw do
 devise_for :admin, skip: [:registrations, :passwords],controllers: {
   sessions: "admin/sessions"
 }
- resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
- resources :admin, only: [:genre_add,:genre_edit,:member_show,:member_edit,:order_log_list,:personal_oder_list,:personal_show]
- 
+
+
+
+namespace :admin do
+  get 'homes/about' => 'homes#about'
+resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
+ resources :items, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
+ resources :genres, only: [:index,:edit,:update,:create,:destroy,]
+ resources :customers, only: [:index,:edit,:show,:update,:create,:destroy,]
+ resources :orders, only: [:show,:update,:create,:destroy,]
+
+end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

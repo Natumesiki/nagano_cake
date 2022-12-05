@@ -37,67 +37,67 @@
       </button>
        <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-    <% if admin_signed_in? %>
-    <li>
-        <%= link_to new_admin_session_path , class: 'nav-link text-light' do %>
-        <i class="fas fa-home" aria-hidden="true"></i> 新規登録
-      <%end%>
-      </li>
+<!--    <#% if admin_signed_in? %>-->
+<!--    <li>-->
+<!--        <%#= link_to new_admin_session_path , class: 'nav-link text-light' do %>-->
+<!--        <i class="fas fa-home" aria-hidden="true"></i> 新規登録-->
+<!--      <#%end%>-->
+<!--      </li>-->
 
-    <li>
-      <%= link_to admin_index_path,class: 'nav-link text-light' do %>
-       <i class="fas fa-users" aria-hidden="true" ></i>　商品一覧
-       <%end%>
-        </li>
+<!--    <li>-->
+<!--      <%#= link_to admin_index_path,class: 'nav-link text-light' do %>-->
+<!--       <i class="fas fa-users" aria-hidden="true" ></i>　商品一覧-->
+<!--       <%#end%>-->
+<!--        </li>-->
 
-    <li >
-    <%= link_to  admin_menber_list_path, class: 'nav-link text-light' do %>
-    <i class="fas fa-book-open" aria-hidden="true" ></i> 会員一覧
-     <%end%>
-       </li>
+<!--    <li >-->
+<!--    <%#= link_to  admin_menber_list_path, class: 'nav-link text-light' do %>-->
+<!--    <i class="fas fa-book-open" aria-hidden="true" ></i> 会員一覧-->
+<!--     <%#end%>-->
+<!--       </li>-->
 
-     <li >
-    <%= link_to  admin_order_log_list_path, class: 'nav-link text-light' do %>
-    <i class="fas fa-book-open" aria-hidden="true" ></i> 会員一覧
-     <%end%>
-       </li>
+<!--     <li >-->
+<!--    <%#= link_to  admin_order_log_list_path, class: 'nav-link text-light' do %>-->
+<!--    <i class="fas fa-book-open" aria-hidden="true" ></i> 会員一覧-->
+<!--     <#%end%>-->
+<!--       </li>-->
 
-     <li>
-        <%= link_to  destroy_admin_session_path, method: :delete,  class: 'nav-link text-light' do %>
-       <i class="fas fa-sign-out-alt" aria-hidden="true" ></i> Log out
-      <%end%>
-      </li>
+<!--     <li>-->
+<!--        <%#= link_to  destroy_admin_session_path, method: :delete,  class: 'nav-link text-light' do %>-->
+<!--       <i class="fas fa-sign-out-alt" aria-hidden="true" ></i> Log out-->
+<!--      <#%end%>-->
+<!--      </li>-->
 
-    <% else %>
-      <li>
-        <%= link_to  admin_index_path , class: 'nav-link text-light' do %>
-        <i class="fas fa-home" aria-hidden="true"></i> Home
-      <%end%>
-      </li>
+<!--    <#% else %>-->
+<!--      <li>-->
+<!--        <#%= link_to  admin_index_path , class: 'nav-link text-light' do %>-->
+<!--        <i class="fas fa-home" aria-hidden="true"></i> Home-->
+<!--      <%#end%>-->
+<!--      </li>-->
 
-      <li>
-        <%= link_to  admin_about_path, class: 'nav-link text-light' do %>
-       <i class="fas fa-link" aria-hidden="true" ></i> About
-      <%end%>
-      </li>
+<!--      <li>-->
+<!--        <%#= link_to  admin_home_about_path, class: 'nav-link text-light' do %>-->
+<!--       <i class="fas fa-link" aria-hidden="true" ></i> About-->
+<!--      <%#end%>-->
+<!--      </li>-->
 
-      <li>
-        <%= link_to new_user_registration_path, class: 'nav-link text-light' do %>
-         <i class="fas fa-user-plus"  aria-hidden="true"></i> Sign up
-      <%end%>
-     </li>
-      <li>
-        <%= link_to  new_user_session_path,  class: 'nav-link text-light' do %>
-        <i class="fas fa-sign-in-alt"></i> Log in
-      </li>
-       <%end%>
-       <% end %>
+<!--      <li>-->
+<!--        <%#= link_to new_user_registration_path, class: 'nav-link text-light' do %>-->
+<!--         <i class="fas fa-user-plus"  aria-hidden="true"></i> Sign up-->
+<!--      <%#end%>-->
+<!--     </li>-->
+<!--      <li>-->
+<!--        <%#= link_to  new_user_session_path,  class: 'nav-link text-light' do %>-->
+<!--        <i class="fas fa-sign-in-alt"></i> Log in-->
+<!--      </li>-->
+<!--       <%#end%>-->
+<!--       <%# end %>-->
 
-      </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+<!--      </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</header>-->
 
 
   <main>
