@@ -14,7 +14,7 @@
    商品名
  </li>
  </th>
- 
+
  <th>
  <li>
   税抜価格
@@ -24,7 +24,7 @@
   ジャンル
  </li>
  </th>
- 
+
  <li>
    ステータス
  </li>
@@ -32,25 +32,25 @@
 <th colspan="3"></th>
 </tr>
  </thead>
- 
-<% @sweets.each do |f| %>
+
+<#% @sweets.each do |f| %>
 
 <tbody>
 <tr>
  <td>
- 
- 
+
+
 </td>
 <td>
-  <%=link_to (sweet.title),sweet_path(sweet.id) %>
+  <%#=link_to (sweet.title),sweet_path(sweet.id) %>
  </td>
  <td>
-  <%= sweet.price %>
+  <%#= @sweet.price %>
 </td>
  <td>
-  <%= sweet.genre %>
+  <%#= @sweet.genre %>
 </td>
  </tr>
 
 </tbody>
-<%end%>
+<#%end%>

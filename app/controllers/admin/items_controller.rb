@@ -1,8 +1,8 @@
 class Admin::ItemsController < ApplicationController
 
  def index
-    @sweet = Sweet.new
-   @sweets = Sweet.all
+    # @sweet = Sweet.new
+  # @sweets = Sweet.all
  end
 
  def new
