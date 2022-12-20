@@ -69,7 +69,7 @@
       </li>
 
       <li>
-        <%= link_to new_admin_session_path, class: 'nav-link text-light' do %>
+        <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
          <i class="fas fa-user-plus"  aria-hidden="true"></i> 新規登録
       <%end%>
      </li>
@@ -80,6 +80,62 @@
        <%end%>
        <% end %>
 
+        <% if customer_signed_in? %>
+
+          <li>
+     <%= link_to public_orders_path,class: 'nav-link text-light' do %>
+     <i class="fas fa-users" aria-hidden="true" ></i>　商品一覧
+    <%end%>
+    </li>
+
+    <li>
+       <%= link_to  public_customers_index_path, class: 'nav-link text-light' do %>
+       <i class="fas fa-book-open" aria-hidden="true" ></i> 会員一覧
+     <%end%>
+    </li>
+
+    <li>
+     <%= link_to  public_orde_path, class: 'nav-link text-light' do %>
+     <i class="fas fa-book-open" aria-hidden="true" ></i> 注文履歴一覧
+    <%end%>
+    </li>
+
+　  <li>
+     <%= link_to pulic_cart_items_path , class: 'nav-link text-light' do %>
+      <i class="fas fa-home" aria-hidden="true"></i> カート内商品
+    <%end%>
+    </li>
+
+    <li>
+      <%= link_to  destroy_customer_session_path, method: :delete,  class: 'nav-link text-light' do %>
+      <i class="fas fa-sign-out-alt" aria-hidden="true" ></i> ログアウト
+      <%end%>
+    </li>
+
+    <% else %>
+      <li>
+        <%= link_to  public_items_path , class: 'nav-link text-light' do %>
+        <i class="fas fa-home" aria-hidden="true"></i> 商品一覧
+      <%end%>
+      </li>
+
+      <li>
+        <%= link_to  public_homes_about_path, class: 'nav-link text-light' do %>
+       <i class="fas fa-link" aria-hidden="true" ></i> About
+      <%end%>
+      </li>
+
+      <li>
+        <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
+         <i class="fas fa-user-plus"  aria-hidden="true"></i> 新規登録
+      <%end%>
+     </li>
+      <li>
+        <%= link_to  new_customer_session_path,  class: 'nav-link text-light' do %>
+        <i class="fas fa-sign-in-alt"></i> ログイン
+      </li>
+       <%end%>
+       <% end %>
      </div>
     </div>
    </ul>

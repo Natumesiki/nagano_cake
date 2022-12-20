@@ -7,6 +7,15 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
+namespace :public do
+get "homes/about" => "homes#about"
+resources :addresses, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
+resources :cart_items, only: [:index]
+resources :customers, only: [:edit,:quit,:show]
+resources :items, only: [:index,:show]
+resources :orders, only: [:index,:new,:show,:thanx]
+end
+
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords],controllers: {
@@ -14,10 +23,9 @@ devise_for :admin, skip: [:registrations, :passwords],controllers: {
 }
 
 
-
 namespace :admin do
   get 'homes/about' => 'homes#about'
-resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
+# resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
  resources :items, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
  resources :genres, only: [:index,:edit,:update,:create,:destroy,]
  resources :customers, only: [:index,:edit,:show,:update,:create,:destroy,]
