@@ -1,13 +1,15 @@
 class Admin::ItemsController < ApplicationController
 
+ def new
+    @item = Item.new
+ end
+
+
  def index
     # @sweet = Sweet.new
   # @sweets = Sweet.all
  end
 
- def new
-    @item = Item.new
- end
 
  def show
  end
