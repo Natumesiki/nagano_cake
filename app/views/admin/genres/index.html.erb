@@ -8,6 +8,13 @@
   </div>
 
   <div class="form-group">
-  <%= f.submit '変更を保存', class:"btn btn-success" %>
+  <%= f.submit '新規登録', class:"btn btn-success" %>
   </div>
 <% end %>
+
+<h3>ジャンル</h3>
+
+<p><%= @genre.title %></p>
+<p><%=link _to f.submit '編集する' , admin_genres_path(genres.id) %></p>
+
+

@@ -1,6 +1,6 @@
 <h1>ジャンル一覧追加</h1>
 
-<%= form_with model: sweet do |f| %>
+<%= form_with model: @sweet do |f| %>
 
   <div class="form-group">
 
@@ -14,7 +14,7 @@
 <% end %>
 </div>
 
-<% @sweet.each do |f| %>
+<% @sweet.each do |sweet| %>
 
 <tr>
   <tb>
@@ -26,10 +26,10 @@
   <tb>
 <%= sweet.genre %>
  </tb>
- 
- 
+
+
  <%= form_with model: sweet do |f| %>
- 
+
  <div class="form-group">
   <%= f.submit '編集する', class:"btn btn-success" %>
   </div>

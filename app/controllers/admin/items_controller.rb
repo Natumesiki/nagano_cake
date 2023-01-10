@@ -1,20 +1,28 @@
 class Admin::ItemsController < ApplicationController
 
  def new
-    @item = Item.new
+    @sweet = Sweet.new
  end
 
 
  def index
-    # @sweet = Sweet.new
-  # @sweets = Sweet.all
+     @sweet = Sweet.new
+     @sweets = Sweet.all
  end
 
 
  def show
+  @sweet = Sweet.find(params[:id])
  end
 
  def edit
+  @sweet = Sweet.find(params[:id])
+ end
+
+ def update
+    sweet = SweeSt.find(params[:id])
+    sweet.update(sweet_params)
+    redirect_to admin_items_path(sweet.id)
  end
 
 def create

@@ -1,8 +1,9 @@
 class Admin::GenresController < ApplicationController
 
    def index
-  @sweet = Sweet.new
+  @genre = Genre.new
    @admin = current_user.id
+   @genres = Genres.all
    end
 
  def edit
@@ -14,5 +15,13 @@ class Admin::GenresController < ApplicationController
   else
    redirect_to admin_index_path
   end
+
+ def create
+    genre = Genre.new(genre_params)
+    gemre.save
+
+    redirect_to admin_genres_path(genre.id)
+  end
+
  end
 end

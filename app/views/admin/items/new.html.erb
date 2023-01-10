@@ -1,5 +1,12 @@
-<%= form_with model: @item.new do |f| %>
- <%= f.text_field :title %>
-  <%= f.text_area :body %>
-   <%= f.submit '投稿' %>
+<h1>新商品登録</h1>
+
+
+<%= form_with model: @sweet.new do |f| %>
+
+<h3>商品名</h3>
+ <p><%= f.text_field :title %></p>
+ <h3>商品紹介</h3>
+  <p><%= f.text_area :body %></p>
+
+   <p><%= f.submit '投稿' %></p>
 <% end %>

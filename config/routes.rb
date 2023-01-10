@@ -24,8 +24,10 @@ devise_for :admin, skip: [:registrations, :passwords],controllers: {
 
 
 namespace :admin do
-  get 'homes/about' => 'homes#about'
-# resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
+    root :to => "homes#top"
+  get 'items/index' => 'items#index',  as: 'index'
+
+ # resources :admin, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
  resources :items, only: [:index,:edit,:show,:new,:update,:create,:destroy,]
  resources :genres, only: [:index,:edit,:update,:create,:destroy,]
  resources :customers, only: [:index,:edit,:show,:update,:create,:destroy,]
@@ -35,3 +37,4 @@ end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
