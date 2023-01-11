@@ -2,12 +2,13 @@ class Admin::ItemsController < ApplicationController
 
  def new
     @sweet = Sweet.new
+
  end
 
 
  def index
      @sweet = Sweet.new
-     @sweets = Sweet.all
+     @sweets = Sweets.all
  end
 
 
@@ -20,7 +21,7 @@ class Admin::ItemsController < ApplicationController
  end
 
  def update
-    sweet = SweeSt.find(params[:id])
+    sweet = Sweet.find(params[:id])
     sweet.update(sweet_params)
     redirect_to admin_items_path(sweet.id)
  end
