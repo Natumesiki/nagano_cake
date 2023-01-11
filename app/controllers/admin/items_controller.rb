@@ -1,7 +1,7 @@
 class Admin::ItemsController < ApplicationController
 
  def new
-    @sweet = Sweet.new
+     @sweet = Sweet.new
 
  end
 
@@ -42,6 +42,6 @@ end
  private
 
   def sweet_params
-    params.require(:sweet).permit(:price,:genre,:title,:body,:user_id)
+    params.require(:items).permit(:price,:genre,:title,:body,:user_id)
   end
 end
