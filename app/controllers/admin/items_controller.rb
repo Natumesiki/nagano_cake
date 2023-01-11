@@ -27,7 +27,7 @@ class Admin::ItemsController < ApplicationController
  end
 
 def create
-     @sweet = Sweet.new(sweet_params)
+      @sweet = Sweet.new(sweet_params)
        @sweet.user_id = current_user.id
       if @sweet.save
      redirect_to admin_index_path(@sweet.id), notice: "You have created book successfully."
@@ -44,4 +44,5 @@ end
   def sweet_params
     params.require(:items).permit(:price,:genre,:title,:body,:user_id)
   end
+
 end
