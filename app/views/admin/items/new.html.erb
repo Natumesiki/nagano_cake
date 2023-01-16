@@ -1,0 +1,13 @@
+<h1>Admin::Items#new</h1>
+<p>Find me in app/views/admin/items/new.html.erb</p>
+<h1>新商品登録</h1>
+
+<%= form_with model: @sweet do |f| %>
+
+<h3>商品名</h3>
+ <p><%= f.text_field :title %></p>
+ <h3>商品紹介</h3>
+  <p><%= f.text_area :body %></p>
+
+   <p><%= f.submit '投稿' %></p>
+<% end %>

@@ -1,0 +1,58 @@
+<h1>Admin::Items#index</h1>
+<p>Find me in app/views/admin/items/index.html.erb</p>
+ <h1>商品一覧</h1>
+
+ <table class='table table-hover table-inverse'>
+ <thead>
+ <tr>
+  <ul>
+   <th>
+  <li>
+   商品ID
+ </li>
+
+ <li>
+   商品名
+ </li>
+ </th>
+
+ <th>
+ <li>
+  税抜価格
+ </li>
+
+ <li>
+  ジャンル
+ </li>
+ </th>
+
+ <li>
+   ステータス
+ </li>
+</ul>
+<th colspan="3"></th>
+</tr>
+ </thead>
+
+<% @sweets.each do |sweet| %>
+
+<tbody>
+<tr>
+ <td>
+
+
+</td>
+<td>
+  <%=link_to (sweet.title),sweet_path(sweet.id) %>
+ </td>
+ <td>
+  <%= sweet.price %>
+</td>
+ <td>
+  <%= sweet.genre %>
+</td>
+ </tr>
+
+</tbody>
+<#%end%>
+

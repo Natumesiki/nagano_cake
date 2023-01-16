@@ -1,0 +1,38 @@
+<h1>Admin::Genres#edit</h1>
+<p>Find me in app/views/admin/genres/edit.html.erb</p>
+<h1>ジャンル一覧追加</h1>
+
+<%= form_with model: @sweet do |f| %>
+
+  <div class="form-group">
+
+  <label for="sweet_title">ジャンル名</label></br>
+   <%= f.text_field :genre , class:"form-control"%>
+  </div>
+
+   <div class="form-group">
+  <%= f.submit '新規登録', class:"btn btn-success" %>
+  </div>
+<% end %>
+</div>
+
+<% @sweet.each do |sweet| %>
+
+<tr>
+  <tb>
+    ジャンル
+  </tb>
+</tr>
+
+<tr>
+  <tb>
+<%= sweet.genre %>
+ </tb>
+
+
+ <%= form_with model: sweet do |f| %>
+
+ <div class="form-group">
+  <%= f.submit '編集する', class:"btn btn-success" %>
+  </div>
+ <% end %>
