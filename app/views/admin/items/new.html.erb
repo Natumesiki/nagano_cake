@@ -2,7 +2,7 @@
 <p>Find me in app/views/admin/items/new.html.erb</p>
 <h1>新商品登録</h1>
 
-<%= form_with model: @new.new do |f| %>
+<%= form_with model: @new, url: new_admin_item_path,  do |f| %>
 
 <h3>商品名</h3>
  <p><%= f.text_field :title %></p>

@@ -1,4 +1,7 @@
 class Admin::ItemsController < ApplicationController
+  # before_action :authenticate_admin!
+  # before_action :set_items, only: %i[show edit update]
+
   def edit
       # @sweet = Sweet.find(params[:id])
   end
@@ -23,22 +26,19 @@ class Admin::ItemsController < ApplicationController
  end
 
 def create
-    #   @sweet = Sweet.new(sweet_params)
+      @sweet = Item.new(item_params)
     #   @sweet.user_id = current_user.id
-    #   if @sweet.save
-    # redirect_to admin_index_path(@sweet.id), notice: "You have created book successfully."
-    #   else
-    # @user = current_user
-    # @sweets = Sweet.all
-    # render 'admin/index'
-      # end
-end
-
+      if @sweet.save
+        redirect_to admin_index_path(@sweet.id), notice: "You have created book successfully."
+      else
+         render :new
+      end
+    end
 
  private
 
   def sweet_params
-    # params.require(:items).permit(:price,:genre,:title,:body,:user_id)
+    params.require(:item).permit(:price,:genre,:title,:body,:user_id)
   end
 
 end
