@@ -12,7 +12,7 @@ class Admin::ItemsController < ApplicationController
   end
 
   def new
-    @new = Item.new
+    @new = Admin::Item.new
   end
 
   def show
