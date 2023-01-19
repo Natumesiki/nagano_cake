@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_18_151351) do
-
-  create_table "admin_bases", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "price"
-    t.string "genre"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2023_01_16_142044) do
 
   create_table "admin_customers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -75,16 +65,6 @@ ActiveRecord::Schema.define(version: 2023_01_18_151351) do
     t.boolean "is_deleted", default: false, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
-  end
-
-  create_table "public_bases", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "price"
-    t.string "genre"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "public_cart_items", force: :cascade do |t|
