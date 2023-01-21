@@ -28,10 +28,10 @@ class Admin::ItemsController < ApplicationController
  end
 
 def create
-      @sweet = Admin::Item.new(item_params)
+      @new = Admin::Item.new(new_params)
     #   @sweet.user_id = current_user.id
-      if @sweet.save
-        redirect_to admin_item_path(@sweet.id), notice: "You have created book successfully."
+      if @new.save
+        redirect_to admin_items_path([:admin,@new].id), notice: "You have created book successfully."
       else
          render :new
       end

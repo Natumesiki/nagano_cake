@@ -7,10 +7,13 @@
   </span>
 </div>
 <div class='flex flex-wrap justify-center'>
-<%= form_with model:[:admin, @new] , url: new_admin_item_path ,local:true,  class: "xl:w-8/12 md:w-10/12", data: { turbo: false }  do |f| %>
-<%= render "admin/shared/error_messages", resource: [:admin,@item] %>
+<%= form_with model:[:admin, @new] , url: new_admin_item_path ,local:true do |f| %>
+<%= render "admin/shared/error_messages", resource: @new %>
+ <div class="mb-6">
 <h3>商品名</h3>
  <p><%= f.text_field :title %></p>
+ </div>
+
  <h3>商品紹介</h3>
   <p><%= f.text_area :body %></p>
 

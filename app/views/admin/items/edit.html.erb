@@ -1,10 +1,18 @@
 <h1>Admin::Items#edit</h1>
 <p>Find me in app/views/admin/items/edit.html.erb</p>
+ <div class="mb-6 text-center">
+  <span class="text-3xl font-bold">
  <p>編集画面adimn</p>
- <%#= form_with model: @sweet do |f| %>
+ </span>
+ </div>
+
+ <div class='flex flex-wrap justify-center'>
+ <%= form_with model:[:admin, @sweet], local:true,class: "xl:w-8/12 md:w-10/12", data: { turbo: false } do |f| %>
+
+ <div class="mb-6">
  <h4>タイトル</h4>
- <%#= f.text_field :title,class:"form-control sweet_title"%>
+ <%= f.text_field :genreclass, class:"w-full rounded-md border border-gray-300 py-2 px-3 placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100" %>
  <h4>本文</h4>
-  <%#= f.text_area :body ,class:"form-control sweet_body"%>
-    <%#= f.submit 'Update',class:"btn btn-success" %>
-     <#% end %>
+  <%= f.text_area :description ,class:"form-control sweet_body"%>
+    <%= f.submit 'Update',class:"btn btn-success" %>
+     <% end %>
