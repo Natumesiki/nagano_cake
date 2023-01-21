@@ -3,12 +3,12 @@ class Admin::ItemsController < ApplicationController
   # before_action :set_items, only: %i[show edit update]
 
   def edit
-      # @sweet = Sweet.find(params[:id])
+      @sweet = Admin::Item.find(params[:id])
   end
 
   def index
-    # @sweet = Sweet.new
-    # @sweets = Sweets.all
+    @sweet = Admin::Item.new
+     @sweets = Admin::Item.all
   end
 
   def new
@@ -16,29 +16,31 @@ class Admin::ItemsController < ApplicationController
   end
 
   def show
-    # @sweet = Sweet.find(params[:id])
+    @sweet = Admin::Item.find(params[:id])
   end
 
  def update
-    # sweet = Sweet.find(params[:id])
-    # sweet.update(sweet_params)
-    # redirect_to admin_items_path(sweet.id)
+     if @sweet.update(item_params)
+      redirect_to admin_item_path(@sweet)
+     else
+      render :edit
+     end
  end
 
 def create
-      @sweet = Item.new(item_params)
+      @sweet = Admin::Item.new(item_params)
     #   @sweet.user_id = current_user.id
       if @sweet.save
-        redirect_to admin_index_path(@sweet.id), notice: "You have created book successfully."
+        redirect_to admin_item_path(@sweet.id), notice: "You have created book successfully."
       else
          render :new
       end
-    end
+end
 
  private
 
   def sweet_params
-    params.require(:item).permit(:price,:genre,:title,:body,:user_id)
+    params.require(:item).permit(:price,:genre,:description, :stock)
   end
 
 end

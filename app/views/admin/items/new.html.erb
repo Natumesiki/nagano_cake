@@ -1,9 +1,14 @@
 <h1>Admin::Items#new</h1>
 <p>Find me in app/views/admin/items/new.html.erb</p>
-<h1>新商品登録</h1>
 
-<%= form_with model:[:admin, @new] , url: new_admin_item_path ,local:true do |f| %>
-
+<div class="mb-6 text-center">
+  <span class="text-3xl font-bold">
+      新商品登録
+  </span>
+</div>
+<div class='flex flex-wrap justify-center'>
+<%= form_with model:[:admin, @new] , url: new_admin_item_path ,local:true,  class: "xl:w-8/12 md:w-10/12", data: { turbo: false }  do |f| %>
+<%= render "admin/shared/error_messages", resource: [:admin,@item] %>
 <h3>商品名</h3>
  <p><%= f.text_field :title %></p>
  <h3>商品紹介</h3>

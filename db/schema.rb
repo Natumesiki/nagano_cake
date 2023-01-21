@@ -28,11 +28,10 @@ ActiveRecord::Schema.define(version: 2023_01_16_142044) do
   end
 
   create_table "admin_items", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "price"
-    t.string "genre"
-    t.integer "user_id"
+    t.string "genre", null: false
+    t.text "description", null: false
+    t.integer "price", null: false
+    t.integer "stock", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 2023_01_16_142044) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2023_01_16_142044) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_deleted", default: false, null: false
