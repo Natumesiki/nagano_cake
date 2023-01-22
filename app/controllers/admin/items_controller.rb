@@ -3,6 +3,7 @@ class Admin::ItemsController < ApplicationController
   # before_action :set_items, only: %i[show edit update]
 
   def edit
+      @sweet = Admin::Item.new
       @sweet = Admin::Item.find(params[:id])
   end
 
@@ -16,10 +17,12 @@ class Admin::ItemsController < ApplicationController
   end
 
   def show
+      @sweet = Admin::Item.new
     @sweet = Admin::Item.find(params[:id])
   end
 
  def update
+     @sweet = Admin::Item.find(params[:id])
      if @sweet.update(item_params)
       redirect_to admin_item_path(@sweet)
      else
@@ -28,12 +31,13 @@ class Admin::ItemsController < ApplicationController
  end
 
 def create
-      @new = Admin::Item.new(new_params)
+      @new = Admin::Item.new(item_params)
     #   @sweet.user_id = current_user.id
       if @new.save
         redirect_to admin_items_path([:admin,@new].id), notice: "You have created book successfully."
       else
-         render :new
+          @news = Admin::Item.all
+         render :index
       end
 end
 

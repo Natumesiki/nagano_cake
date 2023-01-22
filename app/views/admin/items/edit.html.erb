@@ -7,7 +7,7 @@
  </div>
 
  <div class='flex flex-wrap justify-center'>
- <%= form_with model:[:admin, @sweet], local:true,class: "xl:w-8/12 md:w-10/12", data: { turbo: false } do |f| %>
+ <%= form_with model:[:admin, @sweet], url: admin_item_path(@sweet.id) , local:true do |f| %>
 
  <div class="mb-6">
  <h4>タイトル</h4>

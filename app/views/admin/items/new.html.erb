@@ -7,15 +7,15 @@
   </span>
 </div>
 <div class='flex flex-wrap justify-center'>
-<%= form_with model:[:admin, @new] , url: new_admin_item_path ,local:true do |f| %>
+<%= form_with model:[:admin, @new] , url: admin_items_path,  method: :get do |f| %>
 <%= render "admin/shared/error_messages", resource: @new %>
  <div class="mb-6">
 <h3>商品名</h3>
- <p><%= f.text_field :title %></p>
+ <p><%= f.text_field :genre %></p>
  </div>
 
  <h3>商品紹介</h3>
-  <p><%= f.text_area :body %></p>
+  <p><%= f.text_area :description %></p>
 
    <p><%= f.submit '投稿' %></p>
 <% end %>
